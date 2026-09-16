@@ -18,7 +18,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const dns = require("dns");
-
+const Listing = require("./models/listing");
 
 const app = express();
 const port = 8080;
@@ -87,8 +87,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/",(req,res)=>{
-  res.render("listings/index.ejs");
+app.get("/",async(req,res)=>{
+  const allListings = await Listing.find({});
+  res.render("listings/index.ejs", { allListings });
 })
 
 app.use("/listings", listingRouter);

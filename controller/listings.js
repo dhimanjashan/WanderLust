@@ -1,5 +1,4 @@
 const Listing = require("../models/listing");
-const { geocoding } = require("@maptiler/client");
 
 module.exports.index = async (req, res) => {
   const allListings = await Listing.find({});

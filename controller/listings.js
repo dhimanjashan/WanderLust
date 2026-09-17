@@ -24,6 +24,7 @@ module.exports.showListing = async (req, res) => {
     res.redirect("/listings");
   } else {
     console.log(listing.geometry.coordinates);
+    console.log(listing);
     res.render("listings/show.ejs", {
       listing,
       mapToken: process.env.MAP_TOKEN,

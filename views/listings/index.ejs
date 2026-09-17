@@ -3,27 +3,24 @@
   #filters {
     display: flex;
     gap: 2rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
     align-items: center;
- /* Important */
-  overflow-x: auto;
-  white-space: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
 
-  /* Hide scrollbar */
-  scrollbar-width: none;
-}
-
-#filters::-webkit-scrollbar {
-  display: none;
-}
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
 
   .filter {
-     flex: 0 0 auto;
-    margin-top: 2rem;
-    margin-right: 2rem;
+    flex: 0 0 auto;
     text-align: center;
     opacity: 0.7;
+    text-decoration: none;
+    color: black;
   }
 
   .filter:hover {
@@ -34,10 +31,13 @@
   .filter p {
     font-size: 0.8rem;
   }
-  .tax-info{
+
+  .tax-info {
     display: none;
   }
-  .tax-toggle{flex: 0 0 auto;
+
+  .tax-toggle {
+    flex: 0 0 auto;
 
     display: flex;
     align-items: center;
@@ -45,30 +45,31 @@
     border-radius: 1rem;
     height: 3rem;
     padding: 1rem;
-    margin-left:1rem;
+    margin-left: 1rem;
   }
+
   @media (max-width: 768px) {
-  #filters {
-    gap: 1.5rem;
-    padding: 0.8rem 0.5rem;
-  }
+    #filters {
+      gap: 1.5rem;
+      padding: 0.8rem 0.5rem;
+    }
 
-  .filter {
-    min-width: 65px;
-  }
+    .filter {
+      min-width: 65px;
+    }
 
-  .filter div {
-    font-size: 1.2rem;
-  }
+    .filter div {
+      font-size: 1.2rem;
+    }
 
-  .filter p {
-    font-size: 0.7rem;
-  }
+    .filter p {
+      font-size: 0.7rem;
+    }
 
-  .tax-toggle {
-    margin-left: 0;
+    .tax-toggle {
+      margin-left: 0;
+    }
   }
-}
 </style>
 <div id="filters">
   <a href="/listings/category/Trending" class="filter">
@@ -78,8 +79,8 @@
   <a href="/listings/category/Rooms" class="filter">
     <div><i class="fa-solid fa-bed"></i></div>
     <p>Rooms</p>
-    </a>
-   <a href="/listings/category/Iconic Cities" class="filter">
+  </a>
+  <a href="/listings/category/Iconic Cities" class="filter">
     <div><i class="fa-solid fa-mountain-city"></i></div>
     <p>Iconic Cities</p>
   </a>
@@ -87,27 +88,27 @@
     <div><i class="fa-solid fa-mountain"></i></div>
     <p>Mountains</p>
   </a>
-   <a href="/listings/category/Amazing Pools" class="filter">
+  <a href="/listings/category/Amazing Pools" class="filter">
     <div><i class="fa-solid fa-person-swimming"></i></div>
     <p>Amazing Pools</p>
- </a>
- <a href="/listings/category/Camping" class="filter">
-  <div><i class="fa-solid fa-campground"></i></div>
-  <p>Camping</p>
-</a>
- <a href="/listings/category/Farms" class="filter">
-  <div><i class="fa-solid fa-mountain"></i></div>
-  <p>Farms</p>
-</a>
- <a href="/listings/category/Arctic" class="filter">
-  <div><i class="fa-regular fa-snowflake"></i></div>
-  <p>Arctic</p>
-</a>
+  </a>
+  <a href="/listings/category/Camping" class="filter">
+    <div><i class="fa-solid fa-campground"></i></div>
+    <p>Camping</p>
+  </a>
+  <a href="/listings/category/Farms" class="filter">
+    <div><i class="fa-solid fa-mountain"></i></div>
+    <p>Farms</p>
+  </a>
+  <a href="/listings/category/Arctic" class="filter">
+    <div><i class="fa-regular fa-snowflake"></i></div>
+    <p>Arctic</p>
+  </a>
 
- <a href="/listings/category/Boats" class="filter">
-  <div><i class="fa-solid fa-ship"></i></div>
-  <p>HouseBoats</p>
-</a>
+  <a href="/listings/category/Boats" class="filter">
+    <div><i class="fa-solid fa-ship"></i></div>
+    <p>HouseBoats</p>
+  </a>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
       <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">

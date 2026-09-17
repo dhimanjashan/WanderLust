@@ -1,22 +1,26 @@
 <style>
-.search-btn{
-  background-color:#fe424d;
-  color: white;
-  border-radius: 25px;
-  padding: 0 1rem 0 1rem;
-}
-.search-btn:hover{
-  background-color:#fe424d;
-  color: white;
-}
-.search-btn i{
-  display: inline;
-  margin-right: 0.5rem;
-}
-.search-inp{
-  border-radius: 25px;
-  padding: 0.5rem 3rem 0.5rem 3rem;
-}
+  .search-btn {
+    background-color: #fe424d;
+    color: white;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+    margin-left: 1rem;
+  }
+
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: white;
+  }
+
+  .search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
 </style>
 
 <nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
@@ -30,8 +34,20 @@
         <a class="nav-link" href="/listings">Explore</a>
       </div>
       <div class="navbar-nav ms-auto">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp" type="search" placeholder="Search destintions" aria-label="Search" />
+        <form action="/listings/search" method="GET" class="d-flex" role="search">
+          <select class="form-select" name="country">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="United States">USA</option>
+            <option value="Greece">Greece</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="France">France</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Thailand">Thailand</option>
+            <option value="United Arab Emirates">Dubai</option>
+            <option value="Italy">Italy</option>
+            <option value="Finland">Finland</option>
+          </select>
           <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
         </form>
       </div>

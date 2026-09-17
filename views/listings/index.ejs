@@ -2,11 +2,24 @@
 <style>
   #filters {
     display: flex;
-    flex-wrap: wrap;
+    gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
     align-items: center;
-  }
+ /* Important */
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;
+}
+
+#filters::-webkit-scrollbar {
+  display: none;
+}
 
   .filter {
+     flex: 0 0 auto;
     margin-top: 2rem;
     margin-right: 2rem;
     text-align: center;
@@ -24,7 +37,8 @@
   .tax-info{
     display: none;
   }
-  .tax-toggle{
+  .tax-toggle{flex: 0 0 auto;
+
     display: flex;
     align-items: center;
     border: 1px solid black;
@@ -33,44 +47,67 @@
     padding: 1rem;
     margin-left:1rem;
   }
+  @media (max-width: 768px) {
+  #filters {
+    gap: 1.5rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .filter {
+    min-width: 65px;
+  }
+
+  .filter div {
+    font-size: 1.2rem;
+  }
+
+  .filter p {
+    font-size: 0.7rem;
+  }
+
+  .tax-toggle {
+    margin-left: 0;
+  }
+}
 </style>
 <div id="filters">
-  <div class="filter">
+  <a href="/listings/category/Trending" class="filter">
     <div><i class="fa-solid fa-fire"></i></div>
     <p>Trending</p>
-  </div>
-  <div class="filter">
+  </a>
+  <a href="/listings/category/Rooms" class="filter">
     <div><i class="fa-solid fa-bed"></i></div>
     <p>Rooms</p>
-  </div>
-  <div class="filter">
+    </a>
+   <a href="/listings/category/Iconic Cities" class="filter">
     <div><i class="fa-solid fa-mountain-city"></i></div>
     <p>Iconic Cities</p>
-  </div>
-  <div class="filter">
+  </a>
+  <a href="/listings/category/Mountains" class="filter">
     <div><i class="fa-solid fa-mountain"></i></div>
-    <p>Moutains</p>
-  </div>
-  <div class="filter">
+    <p>Mountains</p>
+  </a>
+   <a href="/listings/category/Amazing Pools" class="filter">
     <div><i class="fa-solid fa-person-swimming"></i></div>
     <p>Amazing Pools</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-campground"></i></div>
-    <p>Camping</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-mountain"></i></div>
-    <p>Farms</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-regular fa-snowflake"></i></div>
-    <p>Arctic</p>
-  </div>
-  <div class="filter">
-    <div><i class="fa-solid fa-ship"></i></div>
-    <p>HouseBoats</p>
-  </div>
+ </a>
+ <a href="/listings/category/Camping" class="filter">
+  <div><i class="fa-solid fa-campground"></i></div>
+  <p>Camping</p>
+</a>
+ <a href="/listings/category/Farms" class="filter">
+  <div><i class="fa-solid fa-mountain"></i></div>
+  <p>Farms</p>
+</a>
+ <a href="/listings/category/Arctic" class="filter">
+  <div><i class="fa-regular fa-snowflake"></i></div>
+  <p>Arctic</p>
+</a>
+
+ <a href="/listings/category/Boats" class="filter">
+  <div><i class="fa-solid fa-ship"></i></div>
+  <p>HouseBoats</p>
+</a>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
       <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">

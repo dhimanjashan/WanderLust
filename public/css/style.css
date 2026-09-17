@@ -12,6 +12,7 @@ body{
     height: 5rem;
     background-color: white;
 }
+
 .fa-compass{
     color:#fe434d;
     font-size: 2rem;
@@ -110,3 +111,15 @@ body{
       padding: 0;
     }
 
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    z-index: 1030;
+  }
+}

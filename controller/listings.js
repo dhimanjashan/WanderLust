@@ -85,3 +85,22 @@ module.exports.destroyListing = async (req, res) => {
   req.flash("success", "Listing Deleted!");
   res.redirect(`/listings`);
 };
+
+module.exports.filterByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  const allListings = await Listing.find({ category });
+
+  res.render("listings/index.ejs", { allListings });
+};
+
+module.exports.searchByCountry = async (req, res) => {
+  const { country } = req.query;
+  if (!country) {
+    return res.redirect("/listings");
+  }
+
+  const allListings = await Listing.find({ country });
+
+  res.render("listings/index.ejs", { allListings });
+};

@@ -16,6 +16,11 @@ router
     upload.single("listing[image]"),
     wrapAsync(listingController.createListing),
   );
+router.get(
+  "/search",
+  wrapAsync(listingController.searchByCountry)
+);
+router.get("/category/:category", wrapAsync(listingController.filterByCategory));
 
 // New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
